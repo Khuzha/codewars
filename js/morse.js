@@ -36,19 +36,15 @@ const alphabet = {
   '-.--': 'y',
   '--..': 'z',
   '/': ' ',
-  '--..--': '!',
-  '·-·-·-': '.',
-  '--··--': ',',
-  '...---...': 'sos',
-  // '--..--': '!',
+  '-.-.--': '!',
   '..--..': '?',
-  '......': '.'
+  '.-.-.-': '.',
+  '--..--': ',',
+  '...---...': 'sos'
 }
 
 decodeMorse = function(morseCode){
   const res = morseCode.trim().split('   ').map(word => word.split(' ').map(letter => alphabet[letter]).join('')).join(' ').toUpperCase()
- 
   return res
 }
-
 console.log(decodeMorse('.... . -.--   .--- ..- -.. .'))
