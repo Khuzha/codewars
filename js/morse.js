@@ -44,7 +44,6 @@ const alphabet = {
 }
 
 decodeMorse = function(morseCode){
-  const res = morseCode.trim().split('   ').map(word => word.split(' ').map(letter => alphabet[letter]).join('')).join(' ').toUpperCase()
-  return res
+  return morseCode.trim().split('   ').map(word => word.split(' ').map(letter => alphabet[letter]).join('')).join(' ').toUpperCase()
 }
 console.log(decodeMorse('.... . -.--   .--- ..- -.. .'))
