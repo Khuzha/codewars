@@ -1,7 +1,12 @@
 String.prototype.toJadenCase = function () {
-  return this.split(/\s/).map(word => word[0].toUpperCase() + word.substr(1)).join(' ')
+  const words =  this.split(/\s/)
+
+  for (let i = 0; i < words; i++) {
+    words[i] = words[i][0].toUpperCase() + words[i].substr(1)
+  }
+  return words.join(' ')
 }
 
-let text = 'hello world'
+let text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 text = text.toJadenCase()
 console.log(text)
